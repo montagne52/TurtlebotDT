@@ -2418,7 +2418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d6124324490514389c2a1a8afa99a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 167117286}
+  target: {fileID: 1467818679}
   distance: 10
   xSpeed: 120
   ySpeed: 120
@@ -2556,7 +2556,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82eb855a84a46049a7b33ed02cadb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turtlebot: {fileID: 1467818678}
+  offsetPosition: {x: 0, y: 0, z: 0}
+  offsetPositionSpace: 1
+  lookAt: 1
 --- !u!1001 &1020504304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5142,7 +5144,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70.7
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5168,7 +5170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145500090}
   m_LocalRotation: {x: 0.50000006, y: -0.50000006, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0.368, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1644735594}

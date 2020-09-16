@@ -15,7 +15,7 @@ namespace RosSharp.RosBridgeClient
     [RequireComponent(typeof(HingeJoint))]
     public class MyJointMotorWriter : MonoBehaviour
     {
-        public float velocityScalar = 1;
+        public float velocityScalar;
 
         private HingeJoint _hingeJoint;
         private JointMotor jointMotor;
@@ -26,6 +26,7 @@ namespace RosSharp.RosBridgeClient
         {
             _hingeJoint = GetComponent<HingeJoint>();
             _hingeJoint.useMotor = true;
+            velocityScalar = 1.0f;
         }
 
         private void Update()
@@ -44,7 +45,7 @@ namespace RosSharp.RosBridgeClient
 
         public void Write(float value)
         {
-            targetVelocity = value * Mathf.Rad2Deg * velocityScalar;
+            targetVelocity = -(value * Mathf.Rad2Deg * velocityScalar);
             isMessageReceived = true;
         }
     }
