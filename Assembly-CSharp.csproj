@@ -65,6 +65,9 @@
     <Compile Include="Assets\Custom Scripts\CameraChanger.cs" />
     <Compile Include="Assets\Custom Scripts\CameraOrbiter.cs" />
     <Compile Include="Assets\Custom Scripts\MapDrawer.cs" />
+    <Compile Include="Assets\Custom Scripts\MyJointMotorWriter.cs" />
+    <Compile Include="Assets\Custom Scripts\MyJointStateSubscriber.cs" />
+    <Compile Include="Assets\Custom Scripts\MyMagneticFieldSubscriber.cs" />
     <Compile Include="Assets\Custom Scripts\TurtlebotFollower.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\HeaderExtensions.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\TransformExtensions.cs" />
@@ -89,7 +92,6 @@
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\RosCommuncation\JoySubscriber.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\RosCommuncation\LaserScanPublisher.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\RosCommuncation\LaserScanSubscriber.cs" />
-    <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\RosCommuncation\MagneticFieldSubscriber.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\RosCommuncation\OdometrySubscriber.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\RosCommuncation\PoseStampedPublisher.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\RosCommuncation\PoseStampedSubscriber.cs" />

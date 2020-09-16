@@ -7,7 +7,7 @@ using RosSharp.RosBridgeClient;
 
 public class MapDrawer : MonoBehaviour
 {
-    public MagneticFieldSubscriber magneticFieldSubscriber;
+    public MyMagneticFieldSubscriber magneticFieldSubscriber;
     // var die aan Map linkt
     public GameObject map;
     // als je geen texture functie teken iets hebt, drop die prefab!
@@ -21,7 +21,7 @@ public class MapDrawer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        magneticFieldSubscriber = GameObject.Find("RosConnector").GetComponent<MagneticFieldSubscriber>();
+        magneticFieldSubscriber = GameObject.Find("RosConnector").GetComponent<MyMagneticFieldSubscriber>();
         //map = GameObject.Find("Map").GetComponent<GameObject>();
     }
 
