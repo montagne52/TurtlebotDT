@@ -35,7 +35,7 @@ public class CameraChanger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             currentCameraIndex++;
-            Debug.Log("C button has been pressed. Switching to the next camera");
+            //Debug.Log("C button has been pressed. Switching to the next camera");
             if (currentCameraIndex < cameras.Length)
             {
                 cameras[currentCameraIndex - 1].gameObject.SetActive(false);
