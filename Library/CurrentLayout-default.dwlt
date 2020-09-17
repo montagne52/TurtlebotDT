@@ -151,7 +151,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 18002, y: 14042}
   vertical: 0
-  controlID: 50
+  controlID: 161
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -435,10 +435,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 43}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 7e370000
     m_LastClickedID: 14206
-    m_ExpandedIDs: 0000000076370000783700007a3700007c3700007e3700008037000082370000843700008637000088370000
+    m_ExpandedIDs: 0000000076370000783700007e370000843700008637000088370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -518,7 +518,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 34}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 300
@@ -589,20 +589,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d4350000
-      m_LastClickedID: 13780
-      m_ExpandedIDs: 6afbffff2c3500004a3500003836000056360000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 7c90feff72e3feff8405ffffe035ffffd653ffff3c92ffff50fbffff6afbffff2c3500004a35000038360000be360000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: OrbitCamera
-        m_OriginalName: OrbitCamera
+        m_Name: Magnetometer
+        m_OriginalName: Magnetometer
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 13780
+        m_UserData: -94538
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -651,9 +651,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.5645046, y: -0.20084476, z: 0.22054386}
+    m_Target: {x: 0.12533188, y: -0.012616456, z: 0.04367447}
     speed: 2
-    m_Value: {x: 0.5645046, y: -0.20084476, z: 0.22054386}
+    m_Value: {x: 0.12533188, y: -0.012616456, z: 0.04367447}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -675,15 +675,15 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0.9998695
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -691,21 +691,21 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
-    m_ShowGrid: 1
+      m_Size: {x: 1, y: 1}
+    m_ShowGrid: 0
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.47581974, y: -0.0026386173, z: 0.0014274581, w: 0.8795379}
+    m_Target: {x: 0.25256065, y: 0.51408607, z: -0.16156352, w: 0.80363303}
     speed: 2
-    m_Value: {x: 0.47449985, y: -0.0026407554, z: 0.0014234985, w: 0.8802505}
+    m_Value: {x: 0.25135487, y: 0.51432776, z: -0.16079219, w: 0.80401087}
   m_Size:
-    m_Target: 2.9017296
+    m_Target: 0.53537893
     speed: 2
-    m_Value: 2.9017296
+    m_Value: 0.23537892
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -723,7 +723,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.16542053, y: 0.6033435, z: -0.1297402, w: -0.7692725}
+  m_LastSceneViewRotation: {x: 0.25661498, y: 0.2557174, z: -0.07060595, w: 0.9293951}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

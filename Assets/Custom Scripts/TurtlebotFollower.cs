@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class TurtlebotFollower : MonoBehaviour
 {
-    private Transform target;
+    private Transform turtlebotTransform;
 
     [SerializeField]
     private Vector3 offsetPosition;
@@ -24,7 +24,7 @@ public class TurtlebotFollower : MonoBehaviour
         offsetPosition.x = 0;
         offsetPosition.y = 0.25f;
         offsetPosition.z = -0.5f;
-        target = GameObject.Find("base_link").GetComponent<Transform>();
+        turtlebotTransform = GameObject.Find("base_link").GetComponent<Transform>();
     }
 
     private void Update()
@@ -34,7 +34,7 @@ public class TurtlebotFollower : MonoBehaviour
 
     public void Refresh()
     {
-        if (target == null)
+        if (turtlebotTransform == null)
         {
             Debug.LogWarning("Missing target ref !", this);
 
@@ -44,21 +44,21 @@ public class TurtlebotFollower : MonoBehaviour
         // compute position
         if (offsetPositionSpace == Space.Self)
         {
-            transform.position = target.TransformPoint(offsetPosition);
+            transform.position = turtlebotTransform.TransformPoint(offsetPosition);
         }
         else
         {
-            transform.position = target.position + offsetPosition;
+            transform.position = turtlebotTransform.position + offsetPosition;
         }
 
         // compute rotation
         if (lookAt)
         {
-            transform.LookAt(target);
+            transform.LookAt(turtlebotTransform);
         }
         else
         {
-            transform.rotation = target.rotation;
+            transform.rotation = turtlebotTransform.rotation;
         }
     }
 }
