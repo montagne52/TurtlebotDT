@@ -17,8 +17,8 @@ public class MeshGenerator : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
-        CreateShape();
-        UpdateMesh();
+        //CreateShape();
+        //UpdateMesh();
     }
 
     // Update is called once per frame

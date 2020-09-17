@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Magnetometer : MagneticFieldHandle
 {
+    public float magnitudeScalar = 100.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        InstantiateVector(transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isMessageReceived)
+        {
+            DrawVector(magnitudeScalar);
+            isMessageReceived = false;
+        }
     }
 }
