@@ -10,6 +10,8 @@ public class Magnetometer : MagneticFieldHandle
     void Start()
     {
         InstantiateVector(transform);
+        if (debugMode)
+            InvokeRepeating("DebugMethod", 1, 1);
     }
 
     // Update is called once per frame
@@ -20,5 +22,11 @@ public class Magnetometer : MagneticFieldHandle
             DrawVector(magnitudeScalar);
             isMessageReceived = false;
         }
+    }
+
+    protected override void DebugMethod()
+    {
+        base.DebugMethod();
+        DrawVector(magnitudeScalar);
     }
 }
