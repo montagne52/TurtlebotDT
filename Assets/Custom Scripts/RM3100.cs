@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RM3100 : MagneticFieldHandle
 {
-    public float magnitudeScalar = 0.00001f;
+    public float magnitudeScalar = 0.00002f;
 
     // Start is called before the first frame update
     void Start()

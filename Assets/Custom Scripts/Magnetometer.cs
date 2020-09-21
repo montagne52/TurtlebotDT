@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Magnetometer : MagneticFieldHandle
 {
-    public float magnitudeScalar = 100.0f;
+    public float magnitudeScalar = 200.0f;
 
     // Start is called before the first frame update
     void Start()

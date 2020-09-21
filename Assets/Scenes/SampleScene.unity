@@ -1842,10 +1842,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentReading: {x: 0, y: 0, z: 0}
+  testReading: {x: 0, y: 0, z: 0}
   vectorPrefab: {fileID: 1551080434823754730, guid: 442ef95f10e8da049a803da15f87de3d,
     type: 3}
-  testReading: {x: 0, y: 0, z: 0}
-  debugMode: 0
+  xScale: 0.008
+  zScale: 0.008
 --- !u!1 &691745149
 GameObject:
   m_ObjectHideFlags: 8
@@ -2026,11 +2027,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentReading: {x: 0, y: 0, z: 0}
-  vectorPrefab: {fileID: 8392341991319125674, guid: ac7bcdd1896377d4caf230a306f92b4b,
-    type: 3}
   testReading: {x: 1, y: 1, z: 1}
-  debugMode: 1
-  magnitudeScalar: 100
+  vectorPrefab: {fileID: 2978960785358065265, guid: 5360727553a76da4397a49308938ff65,
+    type: 3}
+  xScale: 0.1
+  zScale: 0.1
+  magnitudeScalar: 200
 --- !u!1 &719792020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,7 +3482,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.2.64:9090
+  RosBridgeServerUrl: ws://192.168.2.83:9090
 --- !u!4 &1260747561
 Transform:
   m_ObjectHideFlags: 0
@@ -4768,11 +4770,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentReading: {x: 0, y: 0, z: 0}
-  vectorPrefab: {fileID: 8392341991319125674, guid: ac7bcdd1896377d4caf230a306f92b4b,
-    type: 3}
   testReading: {x: 1, y: 1, z: 1}
-  debugMode: 1
-  magnitudeScalar: 0.1
+  vectorPrefab: {fileID: 2978960785358065265, guid: 5360727553a76da4397a49308938ff65,
+    type: 3}
+  xScale: 0.1
+  zScale: 0.1
+  magnitudeScalar: 0.00002
 --- !u!114 &1942911656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4786,9 +4789,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentReading: {x: 0, y: 0, z: 0}
-  vectorPrefab: {fileID: 0}
   testReading: {x: 0, y: 0, z: 0}
-  debugMode: 0
+  vectorPrefab: {fileID: 0}
+  xScale: 0.008
+  zScale: 0.008
   fieldPrefab: {fileID: 1382360531340163977, guid: ef8a054a142cfcf4fa416093d60d85b8,
     type: 3}
   prefabParent: {fileID: 912556558}

@@ -74,6 +74,7 @@
     <Compile Include="Assets\Custom Scripts\MyMagnetometerSubscriber.cs" />
     <Compile Include="Assets\Custom Scripts\MyRm3100Subscriber.cs" />
     <Compile Include="Assets\Custom Scripts\RM3100.cs" />
+    <Compile Include="Assets\Custom Scripts\ScaleArrow.cs" />
     <Compile Include="Assets\Custom Scripts\TurtlebotFollower.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\HeaderExtensions.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Extensions\TransformExtensions.cs" />
