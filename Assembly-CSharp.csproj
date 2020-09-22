@@ -136,6 +136,7 @@
     <Compile Include="Assets\RosSharp\Scripts\Urdf\UrdfComponents\UrdfVisual.cs" />
     <Compile Include="Assets\RosSharp\Scripts\Urdf\UrdfComponents\UrdfVisuals.cs" />
     <None Include="Assets\RosSharp\Plugins\External\websocket-sharp.xml" />
+    <None Include="Assets\Custom Objects\SkySerie Freebie\Hdri setup.txt" />
     <None Include="Assets\RosSharp\Plugins\External\Newtonsoft.Json.xml" />
     <None Include="Assets\RosSharp\Plugins\External\Newtonsoft.Json.Bson.xml" />
     <Reference Include="UnityEngine">

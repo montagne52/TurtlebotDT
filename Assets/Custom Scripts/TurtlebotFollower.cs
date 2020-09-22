@@ -22,7 +22,7 @@ public class TurtlebotFollower : MonoBehaviour
     private void Start()
     {
         offsetPosition.x = 0;
-        offsetPosition.y = 0.25f;
+        offsetPosition.y = 0.35f;
         offsetPosition.z = -0.5f;
         turtlebotTransform = GameObject.Find("base_link").GetComponent<Transform>();
     }
