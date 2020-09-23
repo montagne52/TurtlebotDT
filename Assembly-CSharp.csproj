@@ -64,14 +64,15 @@
   <ItemGroup>
     <Compile Include="Assets\Custom Scripts\CameraChanger.cs" />
     <Compile Include="Assets\Custom Scripts\CameraOrbiter.cs" />
-    <Compile Include="Assets\Custom Scripts\DrawArrow.cs" />
     <Compile Include="Assets\Custom Scripts\DropFieldPrefab.cs" />
+    <Compile Include="Assets\Custom Scripts\MagneticFieldDrawer.cs" />
     <Compile Include="Assets\Custom Scripts\MagneticFieldHandle.cs" />
     <Compile Include="Assets\Custom Scripts\Magnetometer.cs" />
-    <Compile Include="Assets\Custom Scripts\MeshGenerator.cs" />
+    <Compile Include="Assets\Custom Scripts\MyFloat32MultiArraySubscriber.cs" />
     <Compile Include="Assets\Custom Scripts\MyJointMotorWriter.cs" />
     <Compile Include="Assets\Custom Scripts\MyJointStateSubscriber.cs" />
     <Compile Include="Assets\Custom Scripts\MyMagnetometerSubscriber.cs" />
+    <Compile Include="Assets\Custom Scripts\MyMatlabSubscribers.cs" />
     <Compile Include="Assets\Custom Scripts\MyRm3100Subscriber.cs" />
     <Compile Include="Assets\Custom Scripts\RM3100.cs" />
     <Compile Include="Assets\Custom Scripts\ScaleArrow.cs" />

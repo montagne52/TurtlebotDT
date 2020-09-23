@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\Editor\FibonacciAction\FibonacciActionClientEditor.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\Editor\JointStatePatcherEditor.cs" />
+    <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\Editor\MeshViewer.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\Editor\MessageGeneration\DirectoryActionAutoGenEditorWindow.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\Editor\MessageGeneration\DirectoryAutoGenEditorWindow.cs" />
     <Compile Include="Assets\RosSharp\Scripts\RosBridgeClient\Editor\MessageGeneration\DirectoryMsgAutoGenEditorWindow.cs" />
