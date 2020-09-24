@@ -10,28 +10,43 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class MagneticFieldDrawer : MonoBehaviour
 {
-    private Mesh mesh;
+    public bool recalculateField = false;
+    public Color[] gradientColors;
+    private Color[] defaultGradientColors;
 
+    private Mesh mesh;
     private Vector3[] vertices;
     private int[] triangles;
+
     private Color[] colors;
+    private Gradient colorGradient;
+    private Color NaNColor;
 
     private bool xCoordinateReceived = false;
     private bool yCoordinateReceived = false;
     private bool zFieldReceived = false;
+
     private float[] xCoordinatesStacked;
     private float[] yCoordinatesStacked;
     [SerializeField] private float[] zFieldValuesStacked;  // remember: this can be anything (scalar potential, norm, whatever you like...)
     [SerializeField] private float[] normalisedData;
+
     private int xMeshLength = 201;  // [PLACEHOLDER] number of vertices in x direction
     private int zMeshLength = 301;  // [PLACEHOLDER] number of vertices in z direction
-
 
     // Start is called once at the start
     void Start()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
+        NaNColor = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        colorGradient = new Gradient();
+        defaultGradientColors = new Color[]
+        {
+            Color.blue, Color.cyan, Color.green, Color.yellow, Color.red
+        };
+        gradientColors = defaultGradientColors;
+        SetColorGradient();
     }
 
     // Update is called once per frame
@@ -43,6 +58,13 @@ public class MagneticFieldDrawer : MonoBehaviour
             xCoordinateReceived = false;
             yCoordinateReceived = false;
             zFieldReceived = false;
+        }
+
+        if (recalculateField)
+        {
+            SetColorGradient();
+            UpdateMagneticField();
+            recalculateField = false;
         }
     }
 
@@ -77,6 +99,7 @@ public class MagneticFieldDrawer : MonoBehaviour
             Debug.Log("topicName unknown");
         }
     }
+
 
     // Main method handling the visualisation of the magnetic field map
     private void UpdateMagneticField()
@@ -117,18 +140,28 @@ public class MagneticFieldDrawer : MonoBehaviour
         // recall that each vertex is an (x,z) coordinate and has an associated field strength
         NormaliseData();
         colors = new Color[vertices.Length];
-        float aR = 0.0f; float aG = 0.0f; float aB = 1.0f;
-        float bR = 1.0f; float bG = 0.0f; float bB = 0.0f;
+
+
         for (int i = 0; i < colors.Length; i++)
         {
             float val = normalisedData[i];
-            colors[i] = new Color((bR - aR) * val + aR, (bG - aG) * val + aG, (bB - aB) * val + aB);
+            if (float.IsNaN(val))
+            {
+                colors[i] = NaNColor;
+            }
+            else
+            {
+                colors[i] = colorGradient.Evaluate(val);
+            }
         }
+
 
         // Update the actual mesh
         UpdateMesh();
     }
 
+
+    // normalise the data with range [0, 1]
     private void NormaliseData()
     {
         // Determine minimum and maximum of our dataset
@@ -169,6 +202,32 @@ public class MagneticFieldDrawer : MonoBehaviour
         }
     }
 
+
+    // Set the color gradient (may be changed from UI)
+    private void SetColorGradient()
+    {
+        if (gradientColors.Length > 8)
+        {
+            Debug.Log("No more than 8 colors may be chosen!");
+            gradientColors = defaultGradientColors;
+        }
+
+        GradientColorKey[] gradientColorKeys = new GradientColorKey[gradientColors.Length];
+        GradientAlphaKey[] gradientAlphaKeys = new GradientAlphaKey[gradientColors.Length];
+
+        float p = 1.0f / gradientColors.Length;
+        float alpha = 1.0f;
+        for (int i = 0; i < gradientColors.Length; i++)
+        {
+            gradientColorKeys[i] = new GradientColorKey(gradientColors[i], p*i);
+            gradientAlphaKeys[i] = new GradientAlphaKey(alpha, p*i);
+        }
+
+        colorGradient.SetKeys(gradientColorKeys, gradientAlphaKeys);
+    }
+
+
+    // Update actual mesh object
     private void UpdateMesh()
     {
         mesh.Clear();
