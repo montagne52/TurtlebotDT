@@ -10,8 +10,10 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class MagneticFieldDrawer : MonoBehaviour
 {
+    public GameObject turtlebot;   // the MagneticFieldDrawer must be located at initial position of turtlebot
     public bool recalculateField = false;
     public Color[] gradientColors;
+
     private Color[] defaultGradientColors;
 
     private Mesh mesh;
@@ -28,18 +30,19 @@ public class MagneticFieldDrawer : MonoBehaviour
 
     private float[] xCoordinatesStacked;
     private float[] yCoordinatesStacked;
-    [SerializeField] private float[] zFieldValuesStacked;  // remember: this can be anything (scalar potential, norm, whatever you like...)
-    [SerializeField] private float[] normalisedData;
+    private float[] zFieldValuesStacked;  // remember: this can be anything (scalar potential, norm, whatever you like...)
+    private float[] normalisedData;
 
-    private int xMeshLength = 201;  // [PLACEHOLDER] number of vertices in x direction
-    private int zMeshLength = 301;  // [PLACEHOLDER] number of vertices in z direction
+    private int xSize;  // number of vertices in x direction
+    private int zSize;  // [PLACEHOLDER] number of vertices in z direction
 
     // Start is called once at the start
     void Start()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        NaNColor = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+
+        NaNColor = new Color(0.0f, 0.0f, 0.0f, 0.0f);  // transparent for NaNs
         colorGradient = new Gradient();
         defaultGradientColors = new Color[]
         {
@@ -47,6 +50,8 @@ public class MagneticFieldDrawer : MonoBehaviour
         };
         gradientColors = defaultGradientColors;
         SetColorGradient();
+
+        transform.position = turtlebot.transform.position + new Vector3(0.0f, 0.01f, 0.0f);
     }
 
     // Update is called once per frame
@@ -112,26 +117,43 @@ public class MagneticFieldDrawer : MonoBehaviour
             vertices[i] = new Vector3(-yCoordinatesStacked[i], 0, xCoordinatesStacked[i]);
         }
 
+        
+        // Determine gridsize
+        xSize = 0;
+        float xCompare = vertices[xSize].x;
+        do
+        {
+            xSize++;
+        }
+        while (vertices[xSize].x != xCompare);
+
+        zSize = 1;
+        for (int i = 1; i < vertices.Length; i++)
+        {
+            if (vertices[i].z != vertices[i - 1].z)
+                zSize++;
+        }
+
         // Define triangles of the mesh with a nasty algorithm, the general idea is
         // that the triangles array holds the indeces of vertices that form each triangle
         // please see unity API or google on procedural mesh generation, e.g.:
         // https://catlikecoding.com/unity/tutorials/procedural-grid/
-        int nTriangles = (xMeshLength - 1) * (zMeshLength - 1) * 2;
+        int nTriangles = (this.xSize - 1) * (zSize - 1) * 2;
         triangles = new int[nTriangles * 3];
 
-        for (int z = 0; z < zMeshLength - 1; z++)
+        for (int z = 0; z < zSize - 1; z++)
         {
-            for (int i = 0, x = 0; x < xMeshLength - 1; i += 6, x++)
+            for (int i = 0, x = 0; x < this.xSize - 1; i += 6, x++)
             {
                 // first triangle of a 'square' (area bounded by four vertices)
-                triangles[(z * (xMeshLength - 1) * 6) + i] = x + (z * xMeshLength);
-                triangles[(z * (xMeshLength - 1) * 6) + i + 1] = x + 1 + (z * xMeshLength);
-                triangles[(z * (xMeshLength - 1) * 6) + i + 2] = xMeshLength + x + (z * xMeshLength);
+                triangles[(z * (this.xSize - 1) * 6) + i] = x + (z * this.xSize);
+                triangles[(z * (this.xSize - 1) * 6) + i + 1] = x + 1 + (z * this.xSize);
+                triangles[(z * (this.xSize - 1) * 6) + i + 2] = this.xSize + x + (z * this.xSize);
 
                 // second triangle of the square
-                triangles[(z * (xMeshLength - 1) * 6) + i + 3] = x + 1 + (z * xMeshLength);
-                triangles[(z * (xMeshLength - 1) * 6) + i + 4] = xMeshLength + x + 1 + (z * xMeshLength);
-                triangles[(z * (xMeshLength - 1) * 6) + i + 5] = xMeshLength + x + (z * xMeshLength);
+                triangles[(z * (this.xSize - 1) * 6) + i + 3] = x + 1 + (z * this.xSize);
+                triangles[(z * (this.xSize - 1) * 6) + i + 4] = this.xSize + x + 1 + (z * this.xSize);
+                triangles[(z * (this.xSize - 1) * 6) + i + 5] = this.xSize + x + (z * this.xSize);
             }
         }
 

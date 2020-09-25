@@ -73,6 +73,7 @@
     <Compile Include="Assets\Custom Scripts\MyJointStateSubscriber.cs" />
     <Compile Include="Assets\Custom Scripts\MyMagnetometerSubscriber.cs" />
     <Compile Include="Assets\Custom Scripts\MyMatlabSubscribers.cs" />
+    <Compile Include="Assets\Custom Scripts\MyPositionsPublisher.cs" />
     <Compile Include="Assets\Custom Scripts\MyRm3100Subscriber.cs" />
     <Compile Include="Assets\Custom Scripts\RM3100.cs" />
     <Compile Include="Assets\Custom Scripts\TurtlebotFollower.cs" />
