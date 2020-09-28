@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691779c3853584348b12736f90393910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityScalar: 0
+  velocityScalar: 1
 --- !u!1 &48774444
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 167117286}
   - component: {fileID: 167117285}
+  - component: {fileID: 167117287}
   m_Layer: 0
   m_Name: turtlebot3_waffle_pi
   m_TagString: Untagged
@@ -985,6 +986,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167117287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167117284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0dd017cea2e8941b1a88fc9858e81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167755357
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,8 +2479,8 @@ FixedJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 240
+  m_MassScale: 0.00001
+  m_ConnectedMassScale: 0.00001
 --- !u!114 &820623658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2480,7 +2493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074632cab556f5b408839af8574308df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JointName: base_link_caster_back_right_link_joint
+  JointName: 
   _jointType: 0
   EffortLimit: 1000
   VelocityLimit: 1000
@@ -2500,7 +2513,7 @@ MonoBehaviour:
   DisplayInertiaGizmo: 0
   rigidbodyDataSource: 0
   Mass: 0.005
-  CenterOfMass: {x: -0.001000002, y: 0, z: 0}
+  CenterOfMass: {x: -0.0009999992, y: 0, z: 0}
   InertiaTensor: {x: 0.0000005416666, y: 0.00000040875, z: 0.00000020041662}
   InertiaTensorRotation: {x: 0, y: -0, z: -0, w: 1}
   UrdfMass: 0.005
@@ -3286,8 +3299,8 @@ FixedJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 240
+  m_MassScale: 0.00001
+  m_ConnectedMassScale: 0.00001
 --- !u!114 &1124946479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3300,7 +3313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074632cab556f5b408839af8574308df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JointName: base_link_caster_back_left_link_joint
+  JointName: 
   _jointType: 0
   EffortLimit: 1000
   VelocityLimit: 1000
@@ -3320,8 +3333,8 @@ MonoBehaviour:
   DisplayInertiaGizmo: 0
   rigidbodyDataSource: 0
   Mass: 0.005
-  CenterOfMass: {x: -0.0009999997, y: 0, z: 0}
-  InertiaTensor: {x: 0.0000005416666, y: 0.00000040875, z: 0.00000020041662}
+  CenterOfMass: {x: -0.001, y: 0, z: 0}
+  InertiaTensor: {x: 0.0000005416666, y: 0.00000040875003, z: 0.00000020041662}
   InertiaTensorRotation: {x: 0, y: -0, z: -0, w: 1}
   UrdfMass: 0.005
   UrdfCenterOfMass: {x: -0, y: 0, z: 0}
@@ -4125,8 +4138,8 @@ MonoBehaviour:
   DisplayInertiaGizmo: 0
   rigidbodyDataSource: 0
   Mass: 1.3729095
-  CenterOfMass: {x: 0, y: 0.04709118, z: -0.06374108}
-  InertiaTensor: {x: 0.009146279, y: 0.01621141, z: 0.00909599}
+  CenterOfMass: {x: 0, y: 0.04709118, z: -0.06374107}
+  InertiaTensor: {x: 0.00914628, y: 0.01621141, z: 0.00909599}
   InertiaTensorRotation: {x: 0.001246603, y: 0, z: 0, w: -0.9999992}
   UrdfMass: 1.3729095
   UrdfCenterOfMass: {x: -0, y: 0, z: 0}
@@ -4841,7 +4854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691779c3853584348b12736f90393910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityScalar: 0
+  velocityScalar: 1
 --- !u!1 &1782391719
 GameObject:
   m_ObjectHideFlags: 0

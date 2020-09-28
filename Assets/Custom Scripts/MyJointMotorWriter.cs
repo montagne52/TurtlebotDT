@@ -26,7 +26,7 @@ namespace RosSharp.RosBridgeClient
         {
             _hingeJoint = GetComponent<HingeJoint>();
             _hingeJoint.useMotor = true;
-            velocityScalar = 1.0f;
+            //velocityScalar = 1.0f;
         }
 
         private void Update()

@@ -10,10 +10,12 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class MagneticFieldDrawer : MonoBehaviour
 {
+    // public variables
     public GameObject turtlebot;   // the MagneticFieldDrawer must be located at initial position of turtlebot
     public bool recalculateField = false;
     public Color[] gradientColors;
 
+    // private variables
     private Color[] defaultGradientColors;
 
     private Mesh mesh;
