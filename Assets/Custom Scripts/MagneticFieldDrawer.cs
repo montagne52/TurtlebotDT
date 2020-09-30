@@ -36,7 +36,7 @@ public class MagneticFieldDrawer : MonoBehaviour
     private float[] normalisedData;
 
     private int xSize;  // number of vertices in x direction
-    private int zSize;  // [PLACEHOLDER] number of vertices in z direction
+    private int zSize;  // number of vertices in z direction
 
     // Start is called once at the start
     void Start()

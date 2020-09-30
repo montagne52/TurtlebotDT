@@ -1,4 +1,10 @@
 ﻿/*
+ * Class that subscribes to Twist message (e.g. cmd_vel or cmd_vel_rc100) in order to
+ * translate and rotate the Turtlebot object in Unity based on the actual linear
+ * and angular velocity of the Turtlebot in physical world.
+ */
+
+/*
 © CentraleSupelec, 2017
 Author: Dr. Jeremy Fix (jeremy.fix@centralesupelec.fr)
 
