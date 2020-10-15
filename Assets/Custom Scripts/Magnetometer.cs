@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/* 
+ * Child class to draw the vector (arrow) of the IMU magnetometer sensor data
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

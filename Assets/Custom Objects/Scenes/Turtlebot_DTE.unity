@@ -2115,7 +2115,7 @@ MonoBehaviour:
     type: 3}
   xScale: 0.1
   zScale: 0.1
-  magnitudeScalar: 200
+  magnitudeScalar: 300
 --- !u!1 &717770962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,7 +4907,7 @@ MonoBehaviour:
     type: 3}
   xScale: 0.11
   zScale: 0.11
-  magnitudeScalar: 0.00005
+  magnitudeScalar: 0.00008
 --- !u!4 &1977618900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5637589295650824049, guid: 05053c69ff9fd28419c7e81393f5fdb0,

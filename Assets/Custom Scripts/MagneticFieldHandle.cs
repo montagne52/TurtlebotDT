@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*
+ * MagneticFieldHandle base class. all behavour relevant to drawing the arrow in Unity.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
